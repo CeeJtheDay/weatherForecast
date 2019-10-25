@@ -11,7 +11,7 @@
 
 <body>
 
-  <div class="container-fluid">
+  <div class="container">
 
     <header id="header">
       Title goes here
@@ -21,44 +21,56 @@
 
   <main class="container">
 
-    <div class="row">
 
-      <section id="searchBar" class="col-sm-3">
 
-        <ul class="list-group list-group-flush">
+    <section id="searchBar" class="container">
 
-          <li class="list-group-item">City Name Here</li>
+      <nav class="navbar navbar-light bg-light">
 
-        </ul>
+        <form class="form-inline">
 
-      </section>
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
 
-      <section id="displayBox" class="col-sm-9">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 
-        <div class="row">
+        </form>
 
-          <section id="currentWeather" class="col-sm-12">
+      </nav>
 
-            current weather goes here
+      <ul class="list-group list-group-flush">
 
-          </section>
+        <li class="list-group-item">City Name Here</li>
+
+      </ul>
+
+    </section>
+
+    <section id="displayBox" class="container">
+
+      <div class="row">
+
+        <section id="currentWeather" class="col-sm-12">
+
+          current weather goes here
+
+        </section>
+
+      </div>
+
+      <div class="row">
+
+        <div id="weatherForecast" class="col-sm-12">
+
+          forecast goes here
 
         </div>
 
-        <div class="row">
-
-          <div id="weatherForecast" class="col-sm-12">
-
-            forecast goes here
-
-          </div>
-
-        </div>
+      </div>
 
 
-      </section>
+    </section>
 
-    </div>
+
 
   </main>
 
