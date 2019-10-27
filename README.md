@@ -1,6 +1,6 @@
 # weatherForecast
 
-![Title Screenshot] (file:///Users/carlj.conrad/Desktop/Screen%20Shot%202019-10-27%20at%201.50.44%20PM.png)
+![TitleScreenshot] (file:///Users/carlj.conrad/Desktop/Screen%20Shot%202019-10-27%20at%201.50.44%20PM.png)
 
 ## Welcome to Weatherboard!
 
@@ -15,11 +15,11 @@ in this application you can search the worlds cities for the current weather.
 this application utilizes the Open Weather API, find their information at the link below:
 
 
-[Weather API] (https://openweathermap.org/api)
+[WeatherAPI] (https://openweathermap.org/api)
 
 ## Instructions
 
-1. ![CLICK HERE!] (https://ceejtheday.github.io/weatherForecast/)
+1. ![CLICKHERE!] (https://ceejtheday.github.io/weatherForecast/)
 
 2. Enter a city in the space providied
 
