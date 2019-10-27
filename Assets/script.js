@@ -12,9 +12,10 @@
 //      11. build api key variable
 //      111. response funtion
 $(document).ready(function () {
+    console.log(new Date());
     var searchHist = [];
     var APIkey = "166a433c57516f51dfab1f7edaed8413";
-    // loadSearchHist();
+    loadSearchHist();
     $("#submit").on("click", function () {
         event.preventDefault();
         var cityName = $("#search").val();
@@ -61,55 +62,81 @@ $(document).ready(function () {
             var lon = response.coord.lon;
             getUvIndex(lat, lon);
             //      iiiii. 5 day forecast
-            fiveDayForecast(cityID)
-            
-        });
-
-    };
-
-    function fiveDayForecast(ID) {
-        var forecastURL = "http://api.openweathermap.org/data/2.5/forecast/daily?id=" + ID + "&units=imperial&cnt=5&APPID=" + APIkey;
-        $.ajax({
-            url: forecastURL,
-            method: "GET"
-        }).then(function (fiveDay) {
-            console.log(fiveDay);
+            // fiveDayForecast(cityID)
 
         });
 
     };
+
+    // function fiveDayForecast(ID) {
+    //     var forecastURL = "http://api.openweathermap.org/data/2.5/forecast/daily?id=" + ID + "&units=imperial&cnt=5&APPID=" + APIkey;
+    //     $.ajax({
+    //         url: forecastURL,
+    //         method: "GET"
+    //     }).then(function (fiveDay) {
+    //         console.log(fiveDay);
+    //         var date = new Date(year, month, day);
+    //         var icon =
+    //         var temp;
+    //         var humid;
+
+    //     });
+
+    // };
 
     function getUvIndex(lat, lon) {
-        var uvURL = "http://api.openweathermap.org/data/2.5/uvi/forecast?appid=" + APIkey + "&lat=" + lat + "&lon=" + lon + "&cnt=1";
+        var uvURL = "http://api.openweathermap.org/data/2.5/uvi?appid=" + APIkey + "&lat=" + lat + "&lon=" + lon;
         $.ajax({
             url: uvURL,
             method: "GET"
-        }).then(function (uvInd){
+        }).then(function (uvInd) {
             console.log(uvInd);
         })
     }
 
-    // function loadSearchHist() {
-    //     searchHist = localStorage.getItem(JSON.parse("CJ's Weather Board"));
-    //     if (localStorage.getItem(JSON.parse("CJ's Weather Board")) === null) {
-    //         localStorage.setItem("CJ's Weather Board", JSON.stringify(searchHist));
-    //     } 
-    //     for (var i = 0; i < searchHist.length; i++) {
-    //         var newBtn = $("<li class='cityBtn list-group-item>").text(searchHist[i]);
-    //         $(".list-group").append(newBtn);
-    //     }
-    // }
+    function loadSearchHist() {
+        if (localStorage.getItem("cjWeatherBoard") === null) {
+            localStorage.setItem("cjWeatherBoard", JSON.stringify(searchHist));
+        } else {
+            var getStoredCities = localStorage.getItem("cjWeatherBoard");
+            var rehydrateStoredCities = JSON.parse(getStoredCities);
+            searchHist = rehydrateStoredCities;
+        };
+        for (var i = 0; i < searchHist.length; i++) {
+            var newBtn = $("<button class='cityBtn'>");
+            newBtn.text(searchHist[i]);
+            $("#searchedCities").append(newBtn);
+        };
+    };
 
     function createNewCityBtn(cityName) {
         var newBtn = $("<button class='cityBtn'>");
         newBtn.text(cityName);
         $("#searchedCities").append(newBtn);
+        localStorage.setItem("cjWeatherBoard", JSON.stringify(searchHist));
     };
 
-    
+    function createCard(date, Icon, Temp, Humid) {
+    // make card for forcast day
+    var mkCard = $("<div class='card' style='width: 18rem;'>");
+    var mkCard2 = $("<div class='card-body'>");
+    // add date
+    var mkCard3 = $("<h5 class='card-title'>" + date + "</h5>");
+    // add icon
+    var mkCard4 = $("<h6 class='card-subtitle mb-2 text-muted'>" + Icon + "</h6>");
+    // add Temperature
+    var mkCard5 = $("<h6 class='card-subtitle mb-2 text-muted'>" + Temp + "</h6>");
+    //add Humidity
+    var mkCard6 = $("<h6 class='card-subtitle mb-2 text-muted'>" + Humid + "</h6>");
+   mkCard.append(mkCard2);
+   mkCard2.append(mkCard3);
+   mkCard2.append(mkCard4);
+   mkCard2.append(mkCard5);
+   mkCard2.append(mkCard6);
+    }
 });
 
-    
+
 
 //      current weather is displayed to right
 //      show city name and todays date
