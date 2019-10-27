@@ -1,6 +1,6 @@
 # weatherForecast
 
-[Title Screenshot] (file:///Users/carlj.conrad/Desktop/Screen%20Shot%202019-10-27%20at%201.50.44%20PM.png)
+![Title Screenshot] (file:///Users/carlj.conrad/Desktop/Screen%20Shot%202019-10-27%20at%201.50.44%20PM.png)
 
 ## Welcome to Weatherboard!
 
@@ -19,13 +19,13 @@ this application utilizes the Open Weather API, find their information at the li
 
 ## Instructions
 
-1. [CLICK HERE!] (https://ceejtheday.github.io/weatherForecast/)
+1. ![CLICK HERE!] (https://ceejtheday.github.io/weatherForecast/)
 
 2. Enter a city in the space providied
 
 3. Click the search button, or press the enter key.
 
-[Search Bar Image] (file:///Users/carlj.conrad/Desktop/Screen%20Shot%202019-10-27%20at%201.51.34%20PM.png)
+![Search Bar Image] (file:///Users/carlj.conrad/Desktop/Screen%20Shot%202019-10-27%20at%201.51.34%20PM.png)
 
 3. Watch as the magic happens in moments.
 
