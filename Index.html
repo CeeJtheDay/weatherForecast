@@ -5,67 +5,93 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="Assets/style.css">
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
   <script rel="stylesheet" src="Assets/script.js"></script>
   <title>Document</title>
 </head>
 
 <body>
 
-  <div class="container">
-
-    <header id="header">
-      Title goes here
-    </header>
-
-  </div>
+  <header id="header">
+    Weatherboard
+  </header>
 
   <main class="container">
 
+    <div class="row">
+
+      <div id="cityBlock" class="col-md-4">
 
 
-    <section id="searchBar" class="container">
 
-      <nav class="navbar navbar-light bg-light">
+        <section id="searchBar">
 
-        <form class="form-inline">
 
-          <input id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
 
-          <button id="submit" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <form class="form-inline">
 
-        </form>
+            <input id="search" class="form-control" type="search" placeholder="Enter City Name" aria-label="Search">
 
-      </nav>
+            <button id="submit" class="btn btn-info" type="submit">Search</button>
 
-      <div id="searchedCities"> </div>
+          </form>
 
-    </section>
 
-    <section id="displayBox" class="container">
 
-      <div class="row">
+          <div id="searchedCities"> </div>
 
-        <section id="currentWeather" class="col-sm-12"></section>
+        </section>
 
-      </div>
 
-      <div class="row">
-
-        <section id="weatherForecast" class="col-sm-12"></section>
 
       </div>
 
+      <div id="weatherBlock" class="col-md-8">
 
-    </section>
 
 
+        <section id="displayBox">
+
+
+
+          <section id="currentWeather" class="row">
+            
+            Search cities to see the current weather here.
+          
+          </section>
+
+
+
+
+
+          <section id="weatherForecast" class="row">
+
+            Search cities to see a 5 day forecast here.
+
+          </section>
+
+
+
+        </section>
+
+
+
+      </div>
+
+    </div>
 
   </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 
 </body>
 

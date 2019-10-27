@@ -1,27 +1,191 @@
+
+
+body {
+    background-color: darkgrey;
+    margin-bottom: 100px;
+}
+
 #header {
-    background-color: darkblue;
+    width: auto;
+    background-image: url("https://wallpaperbro.com/img/640817.jpg");
     color: white;
-    width: 100%;
-    height: 50px;
-    border: ridge 2px darkgrey;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+    height: 100px;
+    border: dotted 1px #fefbd8;
     text-align: center;
     font-size: 35px;
-    padding: 35px;
+    padding: 20px;
+    font-weight: bolder;
+    border: outset 1px white;
+    border-radius: 15px;
     margin-bottom: 20px;
 }
 
-#searchBar {
-    width: 200px;
-    float: left;
-    background-color: lightgrey;
-    height: 800px;
-    border: outset 2px darkgrey;
+#cityBlock {
+    background-image: url("https://c.o0bg.com/rf/image_1200w/Boston/2011-2020/2015/05/20/BostonGlobe.com/BigPicture/Images/2015-05-19T143710Z_2105342231_GF10000100196_RTRMADP_3_EMIRATES-ENVIRONMENT.jpg");
+    height: 300px;
+    width: 400px;
+    padding: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    border: outset 1px white;
+    border-radius: 15px;
 }
 
-#displayBox {
-    width: 66%;
-    float: right;
-    border: hidden 2px lightgrey;
-    height: 800px;
-    width: auto;
+#searchBar {
+    
+} 
+
+#search {
+    margin-left: auto;
+    border: outset 2px darkgrey;
+    text-align: center;
 }
+
+#submit {
+    margin-left: auto;
+    margin-right: auto;
+    border: outset 2px white;
+    background-color: darkgrey;
+}
+
+#searchedCities {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.cityBtn {
+    width: auto;
+    margin: 8px;
+    border: outset 1px white;
+        text-shadow:
+        -1px -1px 0 darkgrey,
+        1px -1px 0 darkgrey,
+        -1px 1px 0 darkgrey,
+        1px 1px 0 darkgrey;
+} 
+
+#currentWeather {
+    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9ee02504-48a3-4585-8e31-9d91d0f1fd55/dmb3qo-976b7087-94d5-41b0-b87a-1d73ed490753.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzllZTAyNTA0LTQ4YTMtNDU4NS04ZTMxLTlkOTFkMGYxZmQ1NVwvZG1iM3FvLTk3NmI3MDg3LTk0ZDUtNDFiMC1iODdhLTFkNzNlZDQ5MDc1My5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.1qxzlmQ5D4pd1UDgGNyqJwzucL_wlLTaCLBt7ZBogAY");
+    border: outset 1px white;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    height: auto;
+    font-size: 25px;
+    border-radius: 15px;
+    color:white;
+    padding: 50px 70px 50px 70px;
+    width: 400px;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;       
+}
+
+#weatherForecast {
+    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9ee02504-48a3-4585-8e31-9d91d0f1fd55/dmb3qo-976b7087-94d5-41b0-b87a-1d73ed490753.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzllZTAyNTA0LTQ4YTMtNDU4NS04ZTMxLTlkOTFkMGYxZmQ1NVwvZG1iM3FvLTk3NmI3MDg3LTk0ZDUtNDFiMC1iODdhLTFkNzNlZDQ5MDc1My5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.1qxzlmQ5D4pd1UDgGNyqJwzucL_wlLTaCLBt7ZBogAY");
+    border: outset 1px white;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    height: auto;
+    font-size: 25px;
+    border-radius: 15px;
+    color:white;
+    padding: 50px 70px 50px 70px;
+    width: 400px;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+}
+
+.card {
+    margin: 10px;
+    background-color: rgb(77, 100, 231, 0);
+    color: white;
+    border-radius: 15px;
+    border: outset 1px white;
+    text-shadow: none;
+}
+
+@media only screen and (max-width:575px) {
+    #cityBlock {
+        height: auto;
+        width: 400px;
+        padding: 10px;
+        margin-right: auto;
+        margin-left: auto;
+        border: outset 1px white;
+        border-radius: 15px;
+    }
+
+    #submit {
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width: 990px) {
+
+    #cityBlock {
+        margin-top: 20px;
+        height: 800px;
+        width: 400px;
+        padding: 20px;
+        margin-right: auto;
+        margin-left: auto;
+        border: outset 1px white;
+        border-radius: 15px;
+    }
+    
+    .cityBtn {
+        margin: 4px;
+    } 
+
+    #submit {
+        margin-top: 10px;
+    }
+
+    #currentWeather {
+        border: outset 1px white;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        height: auto;
+        font-size: 25px;
+        border-radius: 15px;
+        color:white;
+        padding: 50px 70px 50px 70px;
+        width: 400px;
+        text-shadow:
+            -1px -1px 0 black,
+            1px -1px 0 black,
+            -1px 1px 0 black,
+            1px 1px 0 black;         
+    }
+}
+
+@media only screen and (min-width:990px) {
+
+    #cityBlock {
+        margin-top: 20px;
+        height: 800px;
+        width: auto;
+        padding: 20px;
+        margin-right: auto;
+        margin-left: auto;
+        border: outset 1px white;
+        border-radius: 15px;
+    }
+};
+
