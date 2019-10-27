@@ -63,10 +63,12 @@ body {
     margin: 8px;
     border: outset 1px white;
         text-shadow:
-        -1px -1px 0 darkgrey,
-        1px -1px 0 darkgrey,
-        -1px 1px 0 darkgrey,
-        1px 1px 0 darkgrey;
+        -1px -1px 0 white,
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        1px 1px 0 white;
+    color: rgb(49, 51, 78);
+    font-weight: bold;
 } 
 
 #currentWeather {
