@@ -36,41 +36,8 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (response) {
             console.log(response);
-            //      add date
+            //      add current weather card
             mkCurrentCard(response, city);
-            // var dateObj = new Date();
-            // var month = dateObj.getUTCMonth() + 1;
-            // var day = dateObj.getUTCDate();
-            // var year = dateObj.getUTCFullYear();
-            // var curDate = year + "/" + month + "/" + day;
-            // var dateDiv = $("<div id='cityDate'>");
-            // dateDiv.text(curDate);
-            // $("#currentWeather").append(dateDiv);
-            // //      add icon
-            // var curIcon = response.weather[0].icon;
-            // console.log(curIcon);
-            // var iconImg = $("<img>");
-            // iconImg.addClass("weatherImg");
-            // iconImg.attr("src", "http://openweathermap.org/img/wn/" + curIcon + "@2x.png")
-            // $("#currentWeather").append(iconImg);
-            // //      add temperature
-            // var curTemp = response.main.temp;
-            // console.log(curTemp);
-            // var tempDiv = $("<div id='cityTemp'>");
-            // tempDiv.text("Temperature = " + curTemp + "° F");
-            // $("#currentWeather").append(tempDiv);
-            // //      add Humidity
-            // var curHumid = response.main.humidity;
-            // console.log(curHumid);
-            // var humidDiv = $("<div id='cityHumid'>");
-            // humidDiv.text("Humidity = " + curHumid + "%");
-            // $("#currentWeather").append(humidDiv);
-            // //      add Wind Speed
-            // var curWind = response.wind.speed;
-            // console.log(curWind);
-            // var windDiv = $("<div id='cityWind'>");
-            // windDiv.text("Wind Speed = " + curWind + " Mph");
-            // $("#currentWeather").append(windDiv);
             var lat = response.coord.lat;
             var lon = response.coord.lon;
             //      add UV Index
@@ -92,37 +59,9 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (fiveDay) {
             console.log(fiveDay);
-            //      gets todays date
-            // var dateObj = new Date();
-            // var month = dateObj.getUTCMonth() + 1;
-            // var day = dateObj.getUTCDate();
-            // var year = dateObj.getUTCFullYear();
             //      loop creates 5 day cards with information for city searched
             for (var i = 0; i < fiveDay.list.length; i++) {
                 mkForecastCard(fiveDay, i);
-                // var date = year + "/" + month + "/" + (day + i);
-                // var icon = fiveDay.list[i].weather[0].icon
-                // var temp = fiveDay.list[i].temp.day
-                // var humid = fiveDay.list[i].humidity
-                // //      make card for forcast day
-                // var dayCard = $("<div class='card' style='width: 18rem;'>");
-                // var mkCard2 = $("<div class='card-body'>");
-                // //      add date
-                // var mkCard3 = $("<h5 class='card-title'>" + date + "</h5>");
-                // //      add icon"
-                // var mkCard4 = $("<img src='http://openweathermap.org/img/wn/" + icon + "@2x.png'</img>");
-                // //      add Temperature
-                // var mkCard5 = $("<h6 class='card-subtitle mb-2'>" + temp + "°F</h6>");
-                // //      add Humidity
-                // var mkCard6 = $("<h6 class='card-subtitle mb-2'>" + humid + "% Humidity</h6>");
-                // //      builds card div
-                // dayCard.append(mkCard2);
-                // mkCard2.append(mkCard3);
-                // mkCard2.append(mkCard4);
-                // mkCard2.append(mkCard5);
-                // mkCard2.append(mkCard6);
-                // //      attaches card div to forecast display
-                // $("#weatherForecast").append(dayCard);
             };
 
         });
@@ -150,14 +89,14 @@ $(document).ready(function () {
     function loadSearchHist() {
         //      checks for saved city searches in local storage
         if (localStorage.getItem("cjWeatherBoard") === null) {
-            //      if it doesnt exsist, creates one
+        //      if it doesnt exsist, creates one
             localStorage.setItem("cjWeatherBoard", JSON.stringify(searchHist));
         } else {
-            //      if it does gets stored value
+        //      if it does gets stored value
             var getStoredCities = localStorage.getItem("cjWeatherBoard");
-            //      converts from string to object
+        //      converts from string to object
             var rehydrateStoredCities = JSON.parse(getStoredCities);
-            //      adds saved cities to empty array
+        //      adds saved cities to empty array
             searchHist = rehydrateStoredCities;
         };
         //      creates buttons for each saved city
@@ -167,26 +106,33 @@ $(document).ready(function () {
             $("#searchedCities").append(newBtn);
         };
     };
-    //      creates button for searched city and to local storage
+    //          creates button for searched city and to local storage
     function createNewCityBtn(cityName) {
         var newBtn = $("<button class='cityBtn btn btn-outline-light'>");
         newBtn.text(cityName);
         $("#searchedCities").append(newBtn);
         localStorage.setItem("cjWeatherBoard", JSON.stringify(searchHist));
     };
-
+    //          creates and populates current weather card
     function mkCurrentCard(response, city) {
+        //      get date
         var dateObj = new Date();
         var month = dateObj.getUTCMonth() + 1;
         var day = dateObj.getUTCDate();
         var year = dateObj.getUTCFullYear();
+        //      format date
         var date = year + "/" + month + "/" + day;
+        //      get icon id
         var icon = response.weather[0].icon;
+        //      get temp
         var temp = response.main.temp;
+        //      get humidity
         var humid = response.main.humidity;
+        //      get wind speed
         var wind = response.wind.speed;
         //      make card for forcast day
         var dayCard = $("<div id='curCard' class='card' style='width: 18rem;'>");
+        //      add body to card
         var mkCard1 = $("<div id= 'UVhere' class='card-body'>");
         //      add City Name
         var mkCard2 = $("<h5 class='card-title'>" + city + "</h5>");
@@ -211,15 +157,20 @@ $(document).ready(function () {
         //      attaches card div to forecast display
         $("#currentWeather").append(dayCard);
     }
-
+        //      creates and populates 5 forecast cards
     function mkForecastCard(fiveDay, x) {
+        //      get date
         var dateObj = new Date();
         var month = dateObj.getUTCMonth() + 1;
         var day = dateObj.getUTCDate();
         var year = dateObj.getUTCFullYear();
+        //      format date
         var date = year + "/" + month + "/" + (day + x);
+        //      gets icon id
         var icon = fiveDay.list[x].weather[0].icon
+        //      get temp
         var temp = fiveDay.list[x].temp.day
+        //      get humidity
         var humid = fiveDay.list[x].humidity
         //      make card for forcast day
         var dayCard = $("<div class='card' style='width: 18rem;'>");
