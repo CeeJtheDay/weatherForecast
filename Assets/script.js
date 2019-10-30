@@ -29,7 +29,7 @@ $(document).ready(function () {
         $("#currentWeather").empty();
         $("#weatherForecast").empty();
         console.log($("#search").val());
-        var currentWeatherURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&APPID=" + APIkey;
+        var currentWeatherURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&APPID=" + APIkey;
         //      Grab current city from API
         $.ajax({
             url: currentWeatherURL,
@@ -53,7 +53,7 @@ $(document).ready(function () {
 
     //      builds 5 day forecast
     function fiveDayForecast(ID) {
-        var forecastURL = "http://api.openweathermap.org/data/2.5/forecast/daily?id=" + ID + "&units=imperial&cnt=5&APPID=" + APIkey;
+        var forecastURL = "https://api.openweathermap.org/data/2.5/forecast/daily?id=" + ID + "&units=imperial&cnt=5&APPID=" + APIkey;
         $.ajax({
             url: forecastURL,
             method: "GET"
@@ -69,7 +69,7 @@ $(document).ready(function () {
     };
     //      creates UV index for current weather in searched city
     function getUvIndex(lat, lon) {
-        var uvURL = "http://api.openweathermap.org/data/2.5/uvi?appid=" + APIkey + "&lat=" + lat + "&lon=" + lon;
+        var uvURL = "https://api.openweathermap.org/data/2.5/uvi?appid=" + APIkey + "&lat=" + lat + "&lon=" + lon;
         $.ajax({
             url: uvURL,
             method: "GET"
@@ -139,7 +139,7 @@ $(document).ready(function () {
         //      add date
         var mkCard3 = $("<h5 class='card-title'>" + date + "</h5>");
         //      add icon"
-        var mkCard4 = $("<img src='http://openweathermap.org/img/wn/" + icon + "@2x.png'</img>");
+        var mkCard4 = $("<img src='https://openweathermap.org/img/wn/" + icon + "@2x.png'</img>");
         //      add Temperature
         var mkCard5 = $("<h6 class='card-subtitle mb-2'>" + temp + "°F</h6>");
         //      add Humidity
@@ -178,7 +178,7 @@ $(document).ready(function () {
         //      add date
         var mkCard3 = $("<h5 class='card-title'>" + date + "</h5>");
         //      add icon"
-        var mkCard4 = $("<img src='http://openweathermap.org/img/wn/" + icon + "@2x.png'</img>");
+        var mkCard4 = $("<img src='https://openweathermap.org/img/wn/" + icon + "@2x.png'</img>");
         //      add Temperature
         var mkCard5 = $("<h6 class='card-subtitle mb-2'>" + temp + "°F</h6>");
         //      add Humidity
